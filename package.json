@@ -1,13 +1,13 @@
 {
-  "name": "anomaly",
+  "name": "z-score",
   "version": "1.0.0",
   "description": "",
   "main": "lib/ZScore.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.js",
+    "test": "mocha --compilers js:babel-core/register --colors ./test/*.js",
     "build:minified": "WEBPACK_ENV=build webpack",
     "build": "webpack",
-    "watch": "WEBPACK_ENV=dev webpack --progress --colors --watch"
+    "watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.js"
   },
   "author": "Jaakko Ojalehto",
   "devDependencies": {
