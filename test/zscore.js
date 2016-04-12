@@ -1,4 +1,4 @@
-import ZScore from '../src/index'
+import ZScore from '../src/zscore'
 import { staticTemperature, increasingTemperature } from './fixtures/weather'
 import { expect } from 'chai'
 
