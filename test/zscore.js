@@ -56,6 +56,7 @@ describe('ZScore', () => {
     it('should calculate the correct z score', () => {
       zScore.train(staticTemperature)
       expect(zScore.calculate({
+        description: 'cloudy',
         temperature: 11
       })).to.deep.equal({
         temperature: 1.224744871391589

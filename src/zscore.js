@@ -28,9 +28,14 @@ export default class ZScore {
   }
 
   calculate(dataItem) {
-    return _.mapValues(dataItem, (dataValue, dataKey) => {
-      const difference = dataValue - this.data[dataKey].mean
-      return difference / this.data[dataKey].stdDev
+    const zScores = _.mapValues(dataItem, (dataValue, dataKey) => {
+      if(_.isNumber(dataValue)) {
+        const difference = dataValue - this.data[dataKey].mean
+        return difference / this.data[dataKey].stdDev
+      }
+    })
+    return _.pickBy(zScores, zScore => {
+      return !_.isUndefined(zScore)
     })
   }
 
