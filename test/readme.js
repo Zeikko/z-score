@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-var ZScore = require('../src/index')
+var ZScore = require('../dist/index').default
 
 describe('Readme example', () => {
   it('should calculate the correct z score', () => {

@@ -4,10 +4,12 @@ Calculates the z-score (also known as standard score, z-value and normal score) 
 
 ## Installation
 
+```npm install z-score```
 
 ## Usage
 
 ```javascript
+var ZScore = require('z-score').default
 var zScore = new ZScore()
 zScore.train([{
   temperature: 30,
