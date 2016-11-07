@@ -1,5 +1,5 @@
 import ZScore from '../src/zscore'
-import { staticTemperature, increasingTemperature } from './fixtures/weather'
+import { staticTemperature, increasingTemperature, dataSetWithNullItems } from './fixtures/weather'
 import { expect } from 'chai'
 
 let zScore
@@ -80,6 +80,16 @@ describe('ZScore', () => {
       })).to.deep.equal({
         pressure: -2.921002921004012,
         temperature: -24.49489742783178
+      })
+    })
+
+    it('should calculate the correct z scores', () => {
+      zScore.train(dataSetWithNullItems)
+      expect(zScore.calculate({
+        temperature: -10,
+        pressure: 101280
+      })).to.deep.equal({
+        temperature: -11
       })
     })
 

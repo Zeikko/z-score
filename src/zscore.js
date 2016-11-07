@@ -29,7 +29,7 @@ export default class ZScore {
 
   calculate(dataItem) {
     const zScores = _.mapValues(dataItem, (dataValue, dataKey) => {
-      if(_.isNumber(dataValue)) {
+      if(_.isNumber(dataValue) && this.data[dataKey]) {
         const difference = dataValue - this.data[dataKey].mean
         return difference / this.data[dataKey].stdDev
       }

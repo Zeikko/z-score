@@ -29,3 +29,14 @@ export const increasingTemperature = [
     pressure: 101330
   }
 ]
+
+export const dataSetWithNullItems = [
+  {
+    temperature: -5,
+    pressure: null
+  },
+  {
+    temperature: -4,
+    pressure: null
+  }
+]
