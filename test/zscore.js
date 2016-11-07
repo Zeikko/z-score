@@ -83,7 +83,7 @@ describe('ZScore', () => {
       })
     })
 
-    it('should calculate the correct z scores', () => {
+    it('should calculate the correct z scores with null values in dataset', () => {
       zScore.train(dataSetWithNullItems)
       expect(zScore.calculate({
         temperature: -10,
